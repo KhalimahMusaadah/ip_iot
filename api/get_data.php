@@ -14,11 +14,9 @@ $sql = "
     SELECT 
         mac_address,
         nama_mesin,
-        SUBSTRING_INDEX(mac_address, '_', 1) AS jenis_perangkat,
         SUBSTRING_INDEX(ext_port1, '|', -1) AS status,
         SUBSTRING_INDEX(ext_port1, '|', 1) AS ip_address,
-        lastUpdate,
-        serverFeeder
+        lastUpdate
     FROM setup_device
     WHERE 1=1
 ";

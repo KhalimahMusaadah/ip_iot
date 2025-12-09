@@ -32,11 +32,9 @@
                 <tr>
                     <th>MAC Address</th>
                     <th>Nama Mesin</th>
-                    <th>Jenis Perangkat</th>
                     <th>Status</th>
                     <th>IP Address</th>
                     <th>Last Update</th>
-                    <th>Server</th>
                 </tr>
             </thead>
             <tbody id="iot-data"></tbody>

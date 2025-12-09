@@ -4,25 +4,30 @@ const rowsPerPage = 20;
 const pageGroupSize = 10;
 let currentGroup = 0;
 
+const savedPage = localStorage.getItem('currentPage');
+if (savedPage) {
+    currentPage = parseInt(savedPage);
+}
+
 function loadData(jenis='', server='') {
     fetch(`api/get_data.php?jenis=${jenis}&server=${server}`)
         .then(res => res.json())
         .then(data => {
             if (data.error) {
                 document.getElementById('iot-data').innerHTML =
-                    `<tr><td colspan="7" style="color:red;">${data.error}</td></tr>`;
+                    `<tr><td colspan="5" style="color:red;">${data.error}</td></tr>`;
                 return;
             }
 
             allData = data;
-            currentPage = 1;
-            currentGroup = 0;
+            //currentPage = 1;
+            //currentGroup = 0;
             renderTable();
             renderPagination();
         })
         .catch(err => {
             document.getElementById('iot-data').innerHTML =
-                `<tr><td colspan="7" style="color:red;">Error: ${err}</td></tr>`;
+                `<tr><td colspan="5" style="color:red;">Error: ${err}</td></tr>`;
         });
 }
 
@@ -41,11 +46,9 @@ function renderTable() {
             <tr>
                 <td>${row.mac_address ?? ''}</td>
                 <td>${row.nama_mesin ?? ''}</td>
-                <td>${row.jenis_perangkat ?? ''}</td>
                 <td>${row.status ?? ''}</td>
                 <td>${ipLink}</td>
                 <td>${row.lastUpdate ?? ''}</td>
-                <td>${row.serverFeeder ?? ''}</td>
             </tr>
         `;
     });
@@ -80,8 +83,11 @@ function renderPagination() {
 
 function goToPage(page) {
     currentPage = page;
+    localStorage.setItem('currentPage', page); // ✅ simpan halaman
     renderTable();
+    renderPagination();
 }
+
 
 function nextGroup() {
     currentGroup++;
