@@ -46,6 +46,10 @@ if ($lastUpdate == '30d') {
     $sql .= " AND lastUpdate >= NOW() - INTERVAL 30 DAY";
 }
 
+if ($lastUpdate == '90d') {
+    $sql .= " AND lastUpdate >= NOW() - INTERVAL 90 DAY";
+}
+
 $query = mysqli_query($conn, $sql);
 
 if (!$query) {

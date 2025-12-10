@@ -4,11 +4,6 @@ const rowsPerPage = 20;
 const pageGroupSize = 10;
 let currentGroup = 0;
 
-const savedPage = localStorage.getItem('currentPage');
-if (savedPage) {
-    currentPage = parseInt(savedPage);
-}
-
 function loadData(jenis='', server='', lastUpdate='') {
     fetch(`api/get_data.php?jenis=${jenis}&server=${server}&lastUpdate=${lastUpdate}`)
         .then(res => res.json())
@@ -83,7 +78,6 @@ function renderPagination() {
 
 function goToPage(page) {
     currentPage = page;
-    localStorage.setItem('currentPage', page); // ✅ simpan halaman
     renderTable();
     renderPagination();
 }
@@ -114,5 +108,7 @@ loadData();
 setInterval(() => {
     const jenis = document.getElementById('jenisFilter').value;
     const server = document.getElementById('serverFilter').value;
-    loadData(jenis, server);
+    const lastUpdate = document.getElementById('lastUpdateFilter').value;
+    loadData(jenis, server, lastUpdate); 
 }, 5000);
+

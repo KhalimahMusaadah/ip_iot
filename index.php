@@ -15,8 +15,17 @@
             <label for="jenisFilter">Jenis Perangkat</label>
             <select id="jenisFilter">
                 <option value="">-- Semua Jenis Perangkat --</option>
-                <option value="O">lorem</option>
-                <option value="IO">ipsum</option>
+                <option value="O">O</option>
+                <option value="M">M</option>
+                <option value="A">A</option>
+                <option value="I">I</option>
+                <option value="P">P</option>
+                <option value="D">D</option>
+                <option value="V">V</option>
+                <option value="IO">IO</option>
+                <option value="G">G</option>
+                <option value="AG">AG</option>
+                <option value="IOT">IOT</option>
             </select>
         </div>
 
@@ -24,8 +33,10 @@
             <label for="serverFilter">Server</label>
             <select id="serverFilter">
                 <option value="">-- Semua Server --</option>
-                <option value="sinkron_mesin">lorem</option>
-                <option value="server_lain">lorem</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
             </select>
         </div>
 
@@ -37,6 +48,7 @@
                 <option value="24h">24 Jam Terakhir</option>
                 <option value="7d">7 Hari Terakhir</option>
                 <option value="30d">30 Hari Terakhir</option>
+                <option value="90d">3 bulan terakhir</option>
             </select>
         </div>
 
