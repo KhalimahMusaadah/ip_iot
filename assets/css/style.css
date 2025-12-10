@@ -26,18 +26,23 @@ h2 {
 .filters {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
-
-    position: sticky;
-    top: 45px;
-    background-color: #f9f9f9;
-    z-index: 99;
-
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 5px;
 }
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.filters label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
 
 .filters select,
 .filters button {

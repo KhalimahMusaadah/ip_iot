@@ -11,17 +11,23 @@
     <h2>Monitoring IP IoT</h2>
 
     <div class="filters">
-        <select id="jenisFilter">
-            <option value="">-- Semua Jenis Perangkat --</option>
-            <option value="O">O</option>
-            <option value="IO">IO</option>
-        </select>
+        <div class="filter-group">
+            <label for="jenisFilter">Jenis Perangkat</label>
+            <select id="jenisFilter">
+                <option value="">-- Semua Jenis Perangkat --</option>
+                <option value="O">lorem</option>
+                <option value="IO">ipsum</option>
+            </select>
+        </div>
 
-        <select id="serverFilter">
-            <option value="">-- Semua Server --</option>
-            <option value="sinkron_mesin">sinkron_mesin</option>
-            <option value="server_lain">server_lain</option>
-        </select>
+        <div class="filter-group">
+            <label for="serverFilter">Server</label>
+            <select id="serverFilter">
+                <option value="">-- Semua Server --</option>
+                <option value="sinkron_mesin">lorem</option>
+                <option value="server_lain">lorem</option>
+            </select>
+        </div>
 
         <button onclick="applyFilter()">Terapkan Filter</button>
     </div>
