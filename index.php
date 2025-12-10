@@ -73,6 +73,7 @@
 
     <div class="pagination" id="pagination"></div>
 
+    <!-- js -->
     <script src="assets/js/script.js"></script>
 
 </body>
