@@ -29,6 +29,18 @@
             </select>
         </div>
 
+        <div class="filter-group">
+            <label for="lastUpdateFilter">Last Update</label>
+            <select id="lastUpdateFilter">
+                <option value="">Semua</option>
+                <option value="today">Hari Ini</option>
+                <option value="24h">24 Jam Terakhir</option>
+                <option value="7d">7 Hari Terakhir</option>
+                <option value="30d">30 Hari Terakhir</option>
+            </select>
+        </div>
+
+
         <button onclick="applyFilter()">Terapkan Filter</button>
     </div>
 

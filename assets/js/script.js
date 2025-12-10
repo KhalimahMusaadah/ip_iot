@@ -9,8 +9,8 @@ if (savedPage) {
     currentPage = parseInt(savedPage);
 }
 
-function loadData(jenis='', server='') {
-    fetch(`api/get_data.php?jenis=${jenis}&server=${server}`)
+function loadData(jenis='', server='', lastUpdate='') {
+    fetch(`api/get_data.php?jenis=${jenis}&server=${server}&lastUpdate=${lastUpdate}`)
         .then(res => res.json())
         .then(data => {
             if (data.error) {
@@ -103,16 +103,14 @@ function prevGroup() {
     renderPagination();
 }
 
-// Fungsi untuk apply filter dari dropdown
 function applyFilter() {
     const jenis = document.getElementById('jenisFilter').value;
     const server = document.getElementById('serverFilter').value;
-    loadData(jenis, server);
+    const lastUpdate = document.getElementById('lastUpdateFilter').value;
+    loadData(jenis, server, lastUpdate);
 }
 
-// Load data awal
 loadData();
-// Refresh data tiap 5 detik (optional)
 setInterval(() => {
     const jenis = document.getElementById('jenisFilter').value;
     const server = document.getElementById('serverFilter').value;
